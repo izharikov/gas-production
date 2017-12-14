@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C2476DFF-5624-4A69-8EF6-7E752320B357}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GasProduction</RootNamespace>
+    <AssemblyName>GasProduction</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="environment\Room.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadingForm.Designer.cs">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="model\AirFlowController.cs" />
+    <Compile Include="model\AntiFireSystem.cs" />
+    <Compile Include="model\QualityDevice.cs" />
+    <Compile Include="model\ControlDevice.cs" />
+    <Compile Include="model\Device.cs" />
+    <Compile Include="model\Pump.cs" />
+    <Compile Include="model\Filter.cs" />
+    <Compile Include="model\OperatorScreen.cs" />
+    <Compile Include="model\PassiveDevice.cs" />
+    <Compile Include="model\RedirectDevice.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resource2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource2.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="sensor\ActiveSensor.cs" />
+    <Compile Include="sensor\AirSpeedSensor.cs" />
+    <Compile Include="sensor\AirTemperatureSensor.cs" />
+    <Compile Include="sensor\OverheatSensor.cs" />
+    <Compile Include="sensor\PoisonContaminantsSensor.cs" />
+    <Compile Include="sensor\HumiditySensor.cs" />
+    <Compile Include="sensor\MechanicalContaminationSensor.cs" />
+    <Compile Include="sensor\PassiveSensor.cs" />
+    <Compile Include="sensor\Sensor.cs" />
+    <Compile Include="sensor\SmokeSensor.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadingForm.resx">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource1.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resource2.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\fan-enabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\fan-disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\antifire-disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\filter-disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\conditioner-disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\arrow-inside.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Sidodji.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\antifire-enabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\arrow-outside.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\conditioner-enabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\filter-enabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\obemy-dobychi-prirodnogo-gaza-v-rossii.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\filter_enabled.png" />
+    <None Include="Images\filter_disabled.png" />
+    <Content Include="Images\magnifier-disabled.png" />
+    <Content Include="Images\magnifier-enabled.png" />
+    <Content Include="Images\magnifier.png" />
+    <None Include="Images\pump-disabled.png" />
+    <None Include="Images\pump-enabled.png" />
+    <None Include="Images\redirect-disabled.png" />
+    <None Include="Images\redirect-enabled.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
